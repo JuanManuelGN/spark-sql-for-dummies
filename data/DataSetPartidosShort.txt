@@ -1,0 +1,4 @@
+1::1970-71::1::Athletic Club::Barcelona::1::1::12/09/1970::21942000.0
+2::1970-71::1::Las Palmas::Atletico de Madrid::1::1::12/09/1970::21942000.0
+3::1970-71::1::Real Madrid::Valencia::2::0::12/09/1970::21942000.0
+4::1970-71::1::Celta de Vigo::Sporting de Gijon::2::0::13/09/1970::22028400.0
