@@ -1,9 +1,8 @@
 package spark.sql
 
-import org.apache.spark.{SparkConf, SparkContext}
-import org.apache.spark.sql.{DataFrame, SQLContext, SparkSession}
-import spark.configuration.{CSV, FormatSource, PARQUET}
-import org.apache.spark.sql.SQLContext
+import org.apache.spark.sql.{DataFrame, SparkSession}
+import spark.configuration.{AVRO, CSV, FormatSource, PARQUET}
+import com.databricks.spark.avro._
 
 trait Loader {
   def load(config: FormatSource)(implicit spark: SparkSession): DataFrame = {
@@ -14,6 +13,9 @@ trait Loader {
         spark.read.csv(inputPath)
       case PARQUET => {
         spark.read.parquet(inputPath)
+      }
+      case AVRO => {
+        spark.read.avro(inputPath)
       }
     }
   }
