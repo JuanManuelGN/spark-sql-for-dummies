@@ -1,7 +1,7 @@
 package spark.sql
 
 import org.apache.spark.sql.{DataFrame, SparkSession}
-import spark.configuration.{AVRO, CSV, FormatSource, PARQUET}
+import spark.configuration._
 import com.databricks.spark.avro._
 
 trait Loader {
@@ -11,6 +11,7 @@ trait Loader {
     inputFormat match {
       case CSV =>
         spark.read.csv(inputPath)
+      case CSVheader => spark.read.option("header",true).csv(inputPath)
       case PARQUET => {
         spark.read.parquet(inputPath)
       }
